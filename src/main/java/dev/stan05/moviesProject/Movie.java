@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document(collation = "movies")
+@Document(collection = "movies")
 @Data // adds getters and setters to all properties
 @AllArgsConstructor // creates auto constructor to add all properties
 @NoArgsConstructor // another constructor without params
