@@ -1,6 +1,7 @@
-package dev.stan05.moviesProject;
+package dev.stan05.moviesProject.model;
 
 
+import dev.stan05.moviesProject.model.Review;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

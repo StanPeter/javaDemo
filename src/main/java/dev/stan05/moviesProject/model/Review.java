@@ -1,4 +1,4 @@
-package dev.stan05.moviesProject;
+package dev.stan05.moviesProject.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,4 +15,9 @@ public class Review {
     @Id
     private ObjectId id;
     private String body;
+
+    // constructor
+    public Review(String newBody) {
+        this.body = newBody;
+    }
 }

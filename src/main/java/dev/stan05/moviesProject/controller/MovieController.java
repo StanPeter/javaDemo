@@ -1,6 +1,7 @@
-package dev.stan05.moviesProject;
+package dev.stan05.moviesProject.controller;
 
-import org.bson.types.ObjectId;
+import dev.stan05.moviesProject.model.Movie;
+import dev.stan05.moviesProject.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/movies")
 public class MovieController {
     @Autowired
-    private  MovieService movieService;
+    private MovieService movieService;
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);

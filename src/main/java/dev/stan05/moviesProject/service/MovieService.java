@@ -1,6 +1,7 @@
-package dev.stan05.moviesProject;
+package dev.stan05.moviesProject.service;
 
-import org.bson.types.ObjectId;
+import dev.stan05.moviesProject.model.Movie;
+import dev.stan05.moviesProject.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
