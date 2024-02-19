@@ -11,4 +11,6 @@ import java.util.Optional;
 public interface MovieRepository extends MongoRepository<Movie, ObjectId> {
     // Spring will automatically understand to search movie by imdbId
     Optional<Movie> findMovieByImdbId(String imdbId);
+
+    Boolean deleteMovieByImdbId(String imdbId);
 }

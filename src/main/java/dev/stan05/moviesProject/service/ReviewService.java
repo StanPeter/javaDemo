@@ -15,7 +15,7 @@ public class ReviewService {
     ReviewRepository reviewRepository;
     @Autowired
     private MongoTemplate mongoTemplate;
-    public Review createReview(String reviewBody, String imdbId) {
+    /*public Review createReview(String reviewBody, String imdbId) {
         Review newReview = reviewRepository.insert(new Review(reviewBody));
 
         mongoTemplate.update(Movie.class)
@@ -24,5 +24,5 @@ public class ReviewService {
                 .first();
 
         return newReview;
-    }
+    }*/
 }

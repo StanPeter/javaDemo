@@ -15,21 +15,37 @@ import java.util.Optional;
 public class MovieController {
     @Autowired
     private MovieService movieService;
+
     @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<List<Movie>>(movieService.allMovies(), HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Movie>> getMovie(@PathVariable String id) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(id), HttpStatus.OK);
     }
-    /*@PostMapping
-    public ResponseEntity<Boolean> addMovie(Movie newMovie) {
-        movieService.
-        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+
+    @PostMapping
+    public ResponseEntity<Movie> addMovie(Movie newMovie) {
+        /*System.out.println(newMovie.toString());
+
+        if (newMovie.getImdbId() == null) {
+            System.out.println("Missing parameter of ID");
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        };*/
+
+        return new ResponseEntity<Movie>(movieService.saveMovie(newMovie), HttpStatus.OK);
     }
-    @DeleteMapping
-    public ResponseEntity<Boolean> removeMovie(String id) {
-        return
-    }*/
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Movie> editMovie(@PathVariable String id, @RequestBody Movie editedMovie) {
+        System.out.println(id + " IMBDP IDESASAASSA");
+        return new ResponseEntity<Movie>(movieService.updateMovie(id, editedMovie), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> removeMovie(@PathVariable String id) {
+        return new ResponseEntity<Boolean>(movieService.deleteMovie(id), HttpStatus.OK);
+    }
 }
